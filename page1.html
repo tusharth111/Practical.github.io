@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            NEXT PAGE OF SQL Commands
+        </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h3>SQL Queries:</h3>
+    <fieldset>
+	<dl>
+	<dt>4. DROP a Table:</dt>
+    <p>This command is used to delete the whole table from the database.</p>
+	<dd><pre><code>
+        DROP TABLE employees;
+		</pre></code></dd>
+		<dt>5. SELECT data in Table: </dt>
+        <p>SELECT is the fundamental SQL command used to reterive data from one or more tables in database.Sometime SELECT command is used to filter and sort the data of the table.</p>
+		<dd><pre>
+		<code>
+            SELECT first_name, last_name FROM employees;
+		</code>
+		</pre>
+		</dd>
+		<img src="sqloutputpage1.jpeg" alt="SELECT">
+		<dt>6. UPDATE the data in table: </dt>
+        <p>The UPDATE statement is an SQL command used to modify existing data in a table.</p>
+		<dd>
+		<pre>
+		<code>
+            UPDATE employees SET first_name = 'Tushar', last_name ='Thakur' WHERE id=1 ;
+		</code>
+		</pre>
+		</dd>
+		<img src="sqloutput1.2.jpeg" alt="UPDATE">
+        <dt>7. DELETE rows and columns from table: </dt>
+        <p>The DELETE statement is an SQL command used to delete one or more rows from a table.</p>
+        <dd>
+            <pre>
+                <code>
+                    DELETE FROM employees WHERE id = 3;
+                </code>
+            </pre>
+        </dd>
+        <img src="sqloutput1.3.jpeg" alt="delete">
+	</dl>
+	</section>
+	<a href="page2.html" alt="next page" class="button" target="_blank">NEXT PAGE</a>
+    <br>
+
+</fieldset>
+	<footer>
+        <p>SUBMITTED BY Tushar Thakur</p>
+        <p>BCA 4th semster</p>
+        <p>SUBMITTED TO  Mr Chetan </p>
+		<p>&copy; 2023 Basic PL/SQL and SQL Programs</p>
+	</footer>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FUNCTIONS OF SQL
+        </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h3>SQL Queries:</h3>
+    <fieldset>
+	<dl>
+	<dt>8. GROUP BY used in a Table:</dt>
+    <p>The GROUP BY clause is used to group rows that have the same values into summary rows, like totals or counts. It is used with aggregate functions, such as SUM, COUNT, MAX, MIN, and AVG, to calculate summary information for each group.</p>
+	<dd><pre><code>
+    SELECT department, AVG(salary) FROM employees GROUP BY department;
+		</pre></code></dd>
+		<img src="output_groupby.jpeg" alt="groupby">
+		<dt>9. WHERE CLAUSE used in a Table: </dt>
+        <p> The WHERE clause is used to filter rows based on specific conditions. It allows you to specify which rows should be returned by a query based on specific criteria.</p>
+		<dd><pre>
+		<code>
+		SELECT employee_id, first_name, last_name, salary FROM employees WHERE salary > 50000;
+		</code>
+		</pre>
+		</dd>
+		<img src="output_where.jpeg" alt="where">
+		<dt>10. ORDER BY used in a table: </dt>
+        <p>ORDER BY is a clause in SQL that is used to sort the results of a query in ascending or descending order based on one or more columns.</p>
+		<dd>
+		<pre>
+		<code>
+        SELECT first_name, age, salary FROM employees ORDER BY salary ASC;
+		</code>
+		</pre>
+		</dd>
+		<img src="sqloutput1.2.jpeg" alt="orderby">
+	</dl>
+	</section>
+	<a href="page2.html" alt="next page" class="button" target="_blank">NEXT PAGE</a>
+	<a href="pl_sql.html" alt="pl/sql" class="button" target="_blank">PL/SQL</a>
+    <br>
+
+</fieldset>
+	<footer>
+        <p>SUBMITTED BY Tushar Thakur</p>
+        <p>BCA 4th semster</p>
+        <p>SUBMITTED TO  Mr Chetan </p>
+		<p>&copy; 2023 Basic PL/SQL and SQL Programs</p>
+	</footer>
+    </body>
+</html>
+
+
+ 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practical</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section>
+	<h2>What is SQL? </h2>
+	<p>Structured Query Language is a computer language that we use to interact with a relational database.
+		SQL is a tool for organizing, managing, and retrieving archived data from a computer database. The original name was given by IBM as Structured English Query Language, abbreviated by the acronym SEQUEL. When data needs to be retrieved from a database, SQL is used to make the request. The DBMS processes the SQL query retrieves the requested data and returns it to us.
+		Rather, SQL statements describe how a collection of data should be organized or what data should be extracted or added to the database.</p>
+	<section>
+		In SQL, there are three main types of statements: Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL).
+<dl>
+<dt>1. Data Definition Language (DDL):</dt>
+<dd>
+DDL statements are used to create, modify, and delete database objects such as tables, views, indexes, and constraints. Common DDL statements include:
+
+CREATE: creates a new database object such as a table, view, index, or constraint.
+ALTER: modifies the structure of an existing database object.
+DROP: deletes an existing database object.
+TRUNCATE: removes all data from a table.
+</dd>
+<dt>2. Data Manipulation Language (DML):</dt>
+<dd>
+DML statements are used to manipulate data within the database objects. Common DML statements include:
+
+SELECT: retrieves data from one or more tables.
+INSERT: inserts new rows into a table.
+UPDATE: modifies existing rows in a table.
+DELETE: removes rows from a table.
+</dd>
+<dt>3. Data Control Language (DCL):</dt>
+<dd>
+DCL statements are used to control access to the database and its objects. Common DCL statements include:
+
+GRANT: gives a user or group of users access to database objects.
+REVOKE: removes access from a user or group of users.
+</dd>
+
+<dt>4. Other common SQL statements include:</dt>
+<dd>
+WHERE: filters rows based on a specified condition.
+GROUP BY: groups rows by one or more columns.
+HAVING: filters groups based on a specified condition.
+ORDER BY: sorts the rows based on one or more columns.
+JOIN: combines data from two or more tables based on a related column.
+</dd>
+
+</dl>
+
+	</section>
+		<h3>SQL Queries:</h3>
+	<fieldset>
+	<dl>
+	<dt>1. CREATE a Table:</dt>
+	<p>Create command is used to create the structre of table and specify the variables of the table. </p>
+	<dd><pre><code>
+	CREATE TABLE employees (
+	id INT PRIMARY KEY,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+  	department VARCHAR(50),
+  	salary DECIMAL(10,2)
+	);
+		</pre></code></dd>
+		<dt>2. INSERT data in Table: </dt>
+		<p>This command is used to insert the data in the structure of table.</p>
+		<dd><pre>
+		<code>
+INSERT INTO employees (id, first_name,last_name, department, salary)VALUES
+  (1, 'John','Smith', 'Sales', 50000.00),
+  (2, 'Jane', 'Doe', 'Marketing', 60000.00),
+  (3, 'Bob', 'Johnson', 'HR', 55000.00);
+		</code>
+		</pre>
+		</dd>
+		<dt>3. DISPLAY the data in table: </dt>
+		<p>This command is used to display table.</p>
+		<dd>
+		<pre>
+		<code>
+		SELECT * FROM employees;
+		
+		</code>
+		</pre>
+		</dd>
+		<img src="outputSQL1.jpeg" alt="display">
+	</dl>
+	</section>
+	<a href="page1.html" target="_blank" class="button">NEXT PAGE</a>
+<br>
+</fieldset>
+<br>
+	<footer>
+        <p>SUBMITTED BY Tushar Thakur</p>
+        <p>BCA 4th semster</p>
+        <p>SUBMITTED TO  Mr Chetan </p>
+		<p>&copy; 2023 Basic PL/SQL and SQL Programs</p>
+	</footer>
+</body>
+</html>
