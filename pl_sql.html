@@ -28,7 +28,7 @@
         </ol>
         <h2>Programs of PL/SQL: </h2>
         <ol>
-            <li>HELLO WORLD PROGRAM IN PL/SQL:</li>
+            <li> HELLO WORLD PROGRAM IN PL/SQL:</li>
             <pre>
                 <code>
                 DECLARE
@@ -38,29 +38,53 @@
                 END;
                 </code>
             </pre>
-            <img src="#" alt="first_pl/sqloutput">
-            <li>HELLO WORLD PROGRAM IN PL/SQL:</li>
+            <img src="helloworldoutpt.jpeg" alt="first_pl/sqloutput">
+            <li> SQUARE ROOT PROGRAM IN PL/SQL:</li>
             <pre>
                 <code>
-                DECLARE
-                message varchar2(20):= 'Hello, World!';
-                BEGIN
-                dbms_output.put_line(message);
-                END;
+                DECLARE 
+                a number; 
+                 PROCEDURE squareNum(x IN OUT number) IS 
+                 BEGIN 
+                   x := x * x; 
+                 END;  
+                 BEGIN 
+                    a:= 23; 
+                    squareNum(a); 
+                    dbms_output.put_line(' Square of (23): ' || a); 
+                 END; 
+                 /
                 </code>
             </pre>
-            <img src="#" alt="second_pl/sqloutput">
-            <li>HELLO WORLD PROGRAM IN PL/SQL:</li>
+            <img src="squareoutput.jpeg" alt="second_pl/sqloutput">
+            <li>Function data PROGRAM IN PL/SQL:</li>
+            <img src="SQLDATA.jpeg" alt="data">
             <pre>
                 <code>
-                DECLARE
-                message varchar2(20):= 'Hello, World!';
-                BEGIN
-                dbms_output.put_line(message);
-                END;
+                    CREATE OR REPLACE FUNCTION totalCustomers 
+                    RETURN number IS 
+                       total number(2) := 0; 
+                    BEGIN 
+                       SELECT count(*) into total FROM customers; 
+                        
+                       RETURN total; 
+                    END; 
+                    / 
                 </code>
             </pre>
-            <img src="#" alt="third_pl/sqloutput">
+            <p>FUNCTION CALLED</p>
+            <pre>
+                <code>
+                DECLARE 
+                    c number(2); 
+                 BEGIN 
+                    c := totalCustomers(); 
+                    dbms_output.put_line('Total no. of Customers: ' || c); 
+                 END; 
+                 /
+                </code>
+            </pre>
+            <img src="output_sql.jpeg" alt="third_pl/sqloutput">
         </ol>
     </body>
 </html>
