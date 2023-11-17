@@ -1,56 +1,455 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            FUNCTIONS OF SQL
-        </title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <h3>SQL Queries:</h3>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Strings: </h2>
     <fieldset>
-	<dl>
-	<dt>8. GROUP BY used in a Table:</dt>
-    <p>The GROUP BY clause is used to group rows that have the same values into summary rows, like totals or counts. It is used with aggregate functions, such as SUM, COUNT, MAX, MIN, and AVG, to calculate summary information for each group.</p>
-	<dd><pre><code>
-    SELECT department, AVG(salary) FROM employees GROUP BY department;
-		</pre></code></dd>
-		<img src="output_groupby.jpeg" alt="groupby">
-		<dt>9. WHERE CLAUSE used in a Table: </dt>
-        <p> The WHERE clause is used to filter rows based on specific conditions. It allows you to specify which rows should be returned by a query based on specific criteria.</p>
-		<dd><pre>
-		<code>
-		SELECT employee_id, first_name, last_name, salary FROM employees WHERE salary > 50000;
-		</code>
-		</pre>
-		</dd>
-		<img src="output_where.jpeg" alt="where">
-		<dt>10. ORDER BY used in a table: </dt>
-        <p>ORDER BY is a clause in SQL that is used to sort the results of a query in ascending or descending order based on one or more columns.</p>
-		<dd>
-		<pre>
-		<code>
-        SELECT first_name, age, salary FROM employees ORDER BY salary ASC;
-		</code>
-		</pre>
-		</dd>
-		<img src="sqloutput1.2.jpeg" alt="orderby">
-	</dl>
-	</section>
-	<a href="page2.html" alt="next page" class="button" target="_blank">NEXT PAGE</a>
-	<a href="pl_sql.html" alt="pl/sql" class="button" target="_blank">PL/SQL</a>
+        <h3>1.if a string contains only digits . </h3>
+        <pre>
+            <code>
+                // Java program for the above approach 
+                // contains only digits 
+                class string1 { 
+                
+                    // Function to check if a string 
+                    // contains only digits 
+                    public static boolean
+                    onlyDigits(String str, int n) 
+                    { 
+                        // Traverse the string from 
+                        // start to end 
+                        for (int i = 0; i < n; i++) { 
+                
+                            // Check if character is 
+                            // not a digit between 0-9 
+                            // then return false
+                            if (str.charAt(i) < '0'
+                                || str.charAt(i) > '9') { 
+                                return false; 
+                            } 
+                        } 
+                        // If we reach here, that means 
+                        // all characters were digits.
+                        return true; 
+                    } 
+                
+                    // Driver Code 
+                    public static void main(String args[]) 
+                    { 
+                        // Given string str 
+                        String str = "1a234"; 
+                        int len = str.length(); 
+                
+                        // Function Call 
+                        System.out.println(onlyDigits(str, len)); 
+                    } 
+                }                
+            </code>
+        </pre>
+    <img src="7017String1.png" alt="output">
     <br>
+    <h3>2.rinting the value of x using reference variable obj1 . </h3>
+    <pre>
+        <code>
+            class String2 
+            {  
+            // instance variable of the class ABC  
+            int x = 30;  
+            }  
+            class DeepCopyExample   
+            {     
+            // main method  
+            public static void main(String argvs[])   
+            {  
+            // creating an object of the class ABC  
+            
+            
+            String2 obj1 = new String2();  
+              
+            // it will copy the reference, not value  
+            String2 obj2 = new String2();  
+              
+            // updating the value to 6   
+            // using the reference variable obj2  
+            obj2.x = 6;  
+              
+            // printing the value of x using reference variable obj1   
+            System.out.println("The value of x is: " + obj1.x);  
+            }  
+            }                     
+        </code>
+    </pre>
+<img src="7017string2.png" alt="output">
+<br>
+<h3>4.RemoveCharacter . </h3>
+    <pre>
+        <code>
+import java.util.Scanner;
+class RemoveCharacter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        
+        System.out.print("Enter the character to remove: ");
+        char charToRemove = scanner.next().charAt(0);
+        
+        String result = removeCharacter(inputString, charToRemove);
+        System.out.println("Result: " + result);
+        
+        scanner.close();
+    }
+    public static String removeCharacter(String inputString, char charToRemove) {
+        StringBuilder stringBuilder = new StringBuilder();
+        
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+            
+            if (currentChar != charToRemove) {
+                stringBuilder.append(currentChar);
+            }
+        }
+        
+        return stringBuilder.toString();
+    }
+}
+        </code>
+    </pre>
+<img src="7023Strings4.png" alt="output">
+<br>
+<h3>5. String Buffer . </h3>
+    <pre>
+        <code>
+            import java.lang.*; 
+            class s { 
+            
+                public static void main(String[] args) 
+                { 
+            
+                    StringBuffer s1 = new StringBuffer("Yaman "); 
+                    System.out.println("Input: " + s1); 
+            
+                    s1.append(true); 
+                    System.out.println("Output: " + s1); 
+            
+                    System.out.println(); 
+            
+                    StringBuffer s2 = new StringBuffer("Sahota"); 
+                    System.out.println("Input: " + s2); 
+            
+                    s2.append(false); 
+                    System.out.println("Output: " + s2); 
+                } 
+            } 
+        </code>
+    </pre>
+<img src="7038String5.png" alt="output">
+<br>
+<h3>6.Insert a string in a specific position . </h3>
+    <pre>
+        <code>
+            class Insert {
+                public static void main(String[] args) {
+                    // Create a StringBuffer
+                    StringBuffer stringBuffer = new StringBuffer("Hello World!");
+            
+                    // Insert a string at a specific position
+                    stringBuffer.insert(6, "Java ");
+            
+                    // Print the modified string
+                    System.out.println("Modified String: " + stringBuffer.toString());
+                }
+            }
+        </code>
+    </pre>
+<img src="7073_string6.png" alt="output">
+<br>
+<h3>7.Concate the string  . </h3>
+    <pre>
+        <code>
+            class Add{
+                public static void main(String[] args) {
+                    // Using concat method
+                    String originalString = "Hello";
+                    String newString1 = originalString.concat(" World!");
+            
+                    // Using + operator
+                    String newString2 = originalString + " Java!";
+            
+                    // Print the modified strings
+                    System.out.println("Original String: " + originalString);
+                    System.out.println("Modified String 1: " + newString1);
+                    System.out.println("Modified String 2: " + newString2);
+                }
+            }
+        </code>
+    </pre>
+<img src="7073_string7.png" alt="output">
+<br>
+<h3>8.Program to Add Characters to a String . </h3>
+    <pre>
+        <code>
+// Program to Add Characters to a String
 
+class AddCharactersToString {
+    public static void main(String[] args) {
+        // Create a StringBuilder
+        StringBuffer s = new StringBuffer("Hello, ");
+
+        // Add characters to the string
+        s.append("World");
+
+        // Print the final string
+        System.out.println(s.toString()); // Output: "Hello, World!"
+    }
+}
+        </code>
+    </pre>
+<img src="7055string8.png" alt="output">
+<br>
+<h3>10.Program to get Palindrome  of a string . </h3>
+    <pre>
+        <code>
+            class PalindromeString10
+            {    
+                public static void main(String[] args) {    
+                    String string = "Kayak";    
+                    boolean flag = true;    
+                        
+                    //Converts the given string into lowercase    
+                    string = string.toLowerCase();    
+                        
+                    //Iterate the string forward and backward, compare one character at a time     
+                    //till middle of the string is reached    
+                    for(int i = 0; i < string.length()/2; i++){    
+                        if(string.charAt(i) != string.charAt(string.length()-i-1)){    
+                            flag = false;    
+                            break;    
+                        }    
+                    }    
+                    if(flag)    
+                        System.out.println("Given string is palindrome");    
+                    else    
+                        System.out.println("Given string is not a palindrome");    
+                }    
+            }
+        </code>
+    </pre>
+<img src="7017String10.png" alt="output">
+<br>
+<h3>10 . Program of . </h3>
+    <pre>
+        <code>
+ import java.io.*;   
+// Enum 
+
+enum Fruits { 
+
+    Orange, 
+
+    Apple, 
+
+    Banana, 
+
+    Mango; 
+} 
+// Main class 
+
+class M { 
+    // Main driver method 
+
+    public static void main(String[] args) { 
+
+        // Printing all the values 
+
+        System.out.println(Fruits.Orange.name()); 
+
+        System.out.println(Fruits.Apple.name()); 
+
+        System.out.println(Fruits.Banana.name()); 
+
+        System.out.println(Fruits.Mango.name()); 
+
+    } 
+}
+        </code>
+    </pre>
+<img src="7017String11.png" alt="output">
+<br>
+<h3>12. Program to Convert String to String Array</h3>
+<pre>
+    <code>
+class StringToArray
+ {
+    public static void main(String[] args) 
+    {
+        String inputString = "Hello, World! This is a sample string.";
+        String[] stringArray = inputString.split(" ");
+        
+        for (String word : stringArray) {
+            System.out.println(word);
+        }
+    }
+}
+
+    </code>
+</pre>
+<img src="7055string12.png" alt=" output"></a>
+<h3>13. Program to get number of words in string.</h3>
+<pre>
+    <code>
+        class Count{
+            public static void main(String[] args) {
+                // Example string
+                String inputString = "This is a sample string";
+        
+                // Count the number of words
+                int wordCount = countWords(inputString);
+        
+                // Print the result
+                System.out.println("Number of words in the string: " + wordCount);
+            }
+            // Function to count words in a string
+            private static int countWords(String str) {
+                // Check for null or empty string
+                if (str == null || str.isEmpty()) {
+                    return 0;
+                }
+                // Split the string into an array of words
+                String[] words = str.split("\\s+");
+        
+                // Return the number of words
+                return words.length;
+            }
+        }
+    </code>
+</pre>
+<img src="7073_string13.png" alt=" output">
+<h3>13. Program to get number of words in string.</h3>
+<pre>
+    <code>
+        class Count{
+            public static void main(String[] args) {
+                // Example string
+                String inputString = "This is a sample string";
+        
+                // Count the number of words
+                int wordCount = countWords(inputString);
+        
+                // Print the result
+                System.out.println("Number of words in the string: " + wordCount);
+            }
+            // Function to count words in a string
+            private static int countWords(String str) {
+                // Check for null or empty string
+                if (str == null || str.isEmpty()) {
+                    return 0;
+                }
+                // Split the string into an array of words
+                String[] words = str.split("\\s+");
+        
+                // Return the number of words
+                return words.length;
+            }
+        }
+    </code>
+</pre>
+<img src="7073_string13.png" alt=" output">
+<br>
+<h3>14. Program to get number of characters in string.</h3>
+<pre>
+    <code>
+        import java.lang.*;
+class C {    
+    public static void main(String[] args) {    
+        String x = "Hello World";    
+        int count = 0;     
+        for(int i = 0; i < x.length(); i++) {    
+            if(x.charAt(i) != ' ')    
+                count++;    
+        }        
+        System.out.println("No. of characters = " + count);    
+    }    
+}     
+    </code>
+</pre>
+<img src="7105_Strings_14.png" alt =" output">
+<br>
+<h3>15.Program to count the total number of punctuation characters exists in a String. </h3>
+<pre>
+    <code>
+class PunctuationCount {
+    public static void main(String[] args) {
+        // Sample string
+        String inputString = "Hello, world! This is a sample string.";
+
+        // Count the total number of punctuation characters
+        int punctuationCount = countPunctuation(inputString);
+
+        // Display the result
+        System.out.println("Total number of punctuation characters: " + punctuationCount);
+    }
+
+    // Function to count the total number of punctuation characters in a string
+    static int countPunctuation(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++)
+        {
+            char ch = str.charAt(i);
+
+            // Check if the character is a punctuation character
+            if (isPunctuation(ch)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // Function to check if a character is a punctuation character
+    static boolean isPunctuation(char ch) {
+        return !Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch);
+    }
+}
+    </code>
+</pre>
+<img src="7107strings15.png" alt =" output">
+<br>
+<h3>16.Program to count the total number of VOWELS AND cONSONANTS characters exists in a String. </h3>
+<pre>
+    <code>
+        class CountCheck {    
+            public static void main(String[] args) {         
+                int vCount = 0, cCount = 0;    
+                String str = "This is a really simple sentence";    
+                str = str.toLowerCase();
+                for(int i = 0; i < str.length(); i++) 
+                {     
+                    if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {    
+                
+                        vCount++;    
+                    }    
+                   
+                    else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {      
+                    
+                        cCount++;    
+                    }    
+                }    
+                System.out.println("Number of vowels: " + vCount);    
+                System.out.println("Number of consonants: " + cCount);    
+            }    
+        }   
+    </code>
+</pre>
+<img src="7057_String16.png" alt =" output">
+<br>
 </fieldset>
-	<footer>
-        <p>SUBMITTED BY Tushar Thakur</p>
-        <p>BCA 4th semster</p>
-		<p>7075/21</p>
-        <p>SUBMITTED TO  Mr Chetan </p>
-		<p>&copy; 2023 Basic PL/SQL and SQL Programs</p>
-	</footer>
-    </body>
+<br>
+<a href="Page3.html" class="next-button">Input/Output Programs </a>
+</body>
 </html>
-
-
- 

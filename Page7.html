@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 7: Multithreading Programs.</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <fieldset>
+        <h3>1.Program 1</h3>
+        <pre>
+            <code>
+                class sampleThread extends Thread{
+                    public void run(){
+                        System.out.println("hello world");
+                    }
+                }
+                public class Multithreading_1{
+                  public static void main(String[] args) {
+                    sampleThread foo = new sampleThread();
+                    foo.run();
+                  }
+                }
+            </code>
+        </pre>
+        <img src="Multithreading_1.png" alt="output">
+        <br>
+        <h3>3.Write a Java Program that sorts an array of integers using multiple threads. </h3>
+        <pre>
+            <code>
+                import java.util.Arrays;
+                
+                class ParallelMergeSort {
+                
+                    private final int[] array;
+                
+                    private ParallelMergeSort(int[] array) {
+                        this.array = array;
+                    }
+                
+                    private void merge(int low, int mid, int high) {
+                        int[] left = Arrays.copyOfRange(array, low, mid + 1);
+                        int[] right = Arrays.copyOfRange(array, mid + 1, high + 1);
+                
+                        int i = 0, j = 0, k = low;
+                
+                        while (i < left.length && j < right.length) {
+                            if (left[i] <= right[j]) {
+                                array[k++] = left[i++];
+                            } else {
+                                array[k++] = right[j++];
+                            }
+                        }
+                
+                        while (i < left.length) {
+                            array[k++] = left[i++];
+                        }
+                
+                        while (j < right.length) {
+                            array[k++] = right[j++];
+                        }
+                    }
+                
+                    private void mergeSort(int low, int high) {
+                        if (low < high) {
+                            int mid = (low + high) / 2;
+                
+                            Thread leftThread = new Thread(() -> mergeSort(low, mid));
+                            Thread rightThread = new Thread(() -> mergeSort(mid + 1, high));
+                
+                            leftThread.start();
+                            rightThread.start();
+                
+                            try {
+                                leftThread.join();
+                                rightThread.join();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                
+                            merge(low, mid, high);
+                        }
+                    }
+                
+                    private static void parallelMergeSort(int[] array) {
+                        ParallelMergeSort sorter = new ParallelMergeSort(array);
+                        sorter.mergeSort(0, array.length - 1);
+                    }
+                
+                    public static void main(String[] args) {
+                        int[] arr = {12, 4, 7, 3, 9, 5, 2, 1, 6, 11, 8, 10};
+                
+                        System.out.println("Array before sorting: " + Arrays.toString(arr));
+                        
+                        parallelMergeSort(arr);
+                
+                        System.out.println("Array after sorting: " + Arrays.toString(arr));
+                    }
+                }   
+            </code>
+        </pre>
+        <img src="7007Multithreading3.png" alt="output">
+        <br>
+        <h3>4.Program number 4</h3>
+        <pre>
+            <code>
+                import java.util.Scanner;
+
+                class Matrix {
+                    public static void main(String[] args) {
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.print("Enter the number of rows for the first matrix: ");
+                        int rowsA = scanner.nextInt();
+                        System.out.print("Enter the number of columns for the first matrix: ");
+                        int colsA = scanner.nextInt();
+                
+                        System.out.print("Enter the number of rows for the second matrix: ");
+                        int rowsB = scanner.nextInt();
+                        System.out.print("Enter the number of columns for the second matrix: ");
+                        int colsB = scanner.nextInt();
+                
+                        if (colsA != rowsB) {
+                            System.out.println("Matrix multiplication is not possible with the given dimensions.");
+                            return;
+                        }
+                        System.out.println("Enter elements for the first matrix:");
+                        int[][] matrixA = readMatrix(rowsA, colsA, scanner);
+                
+                        System.out.println("Enter elements for the second matrix:");
+                        int[][] matrixB = readMatrix(rowsB, colsB, scanner);
+                        int[][] resultMatrix = multiplyMatrices(matrixA, matrixB);
+                        System.out.println("\nResult Matrix (Multiplication of Matrix A and Matrix B):");
+                        displayMatrix(resultMatrix);
+                        scanner.close();
+                    }
+                    private static int[][] readMatrix(int rows, int cols, Scanner scanner) {
+                        int[][] matrix = new int[rows][cols];
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                System.out.print("Enter element at position (" + (i + 1) + "," + (j + 1) + "): ");
+                                matrix[i][j] = scanner.nextInt();
+                            }
+                        }
+                        return matrix;
+                    }
+                    private static int[][] multiplyMatrices(int[][] matrixA, int[][] matrixB) {
+                        int rowsA = matrixA.length;
+                        int colsA = matrixA[0].length;
+                        int colsB = matrixB[0].length;
+                
+                        int[][] resultMatrix = new int[rowsA][colsB];
+                        MatrixMultiplicationThread[] threads = new MatrixMultiplicationThread[rowsA];
+                
+                        for (int i = 0; i < rowsA; i++) {
+                            threads[i] = new MatrixMultiplicationThread(i, matrixA, matrixB, resultMatrix);
+                            threads[i].start();
+                        }
+                        try {
+                            for (MatrixMultiplicationThread thread : threads) {
+                                thread.join();
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                
+                        return resultMatrix;
+                    }
+                    private static void displayMatrix(int[][] matrix) {
+                        for (int[] row : matrix) {
+                            for (int value : row) {
+                                System.out.print(value + " ");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                class MatrixMultiplicationThread extends Thread {
+                    private int row;
+                    private int[][] matrixA;
+                    private int[][] matrixB;
+                    private int[][] resultMatrix;
+                
+                    public MatrixMultiplicationThread(int row, int[][] matrixA, int[][] matrixB, int[][] resultMatrix) {
+                        this.row = row;
+                        this.matrixA = matrixA;
+                        this.matrixB = matrixB;
+                        this.resultMatrix = resultMatrix;
+                    }
+                
+                    @Override
+                    public void run() {
+                        int colsA = matrixA[0].length;
+                        int colsB = matrixB[0].length;
+                
+                        for (int j = 0; j < colsB; j++) {
+                            for (int k = 0; k < colsA; k++) {
+                                resultMatrix[row][j] += matrixA[row][k] * matrixB[k][j];
+                            }
+                        }
+                    }
+                }
+            </code>
+        </pre>
+        <img src="multithreading_4.png" alt="output">
+        <br>
+        <h3>5.Calculate sum of prime numbers up to a given limit using multiple threads</h3>
+        <pre>
+            <code>
+                class MyThread extends Thread {
+                    private int start, end;
+                    private int sum = 0;
+                
+                    MyThread(int start, int end) {
+                        this.start = start;
+                        this.end = end;
+                    }
+                
+                    public void run() {
+                        System.out.println("My thread is running");
+                        for (int i = start; i <= end; i++) {
+                            if (isPrime(i))
+                                sum += i;
+                        }
+                    }
+                
+                    boolean isPrime(int n) {
+                        if (n == 0 || n == 1)
+                            return false;
+                        for (int i = 2; i <= Math.sqrt(n); ++i) {
+                            if (n % i == 0)
+                                return false;
+                        }
+                        return true;
+                    }
+                
+                    public int getSum() {
+                        return sum;
+                    }
+                }
+                
+                class SumOfPrimes {
+                    MyThread[] myThreads;
+                    private int sum = 0;
+                    private int limit = 20;
+                    private static int threadCount = 4;
+                
+                    // Constructor to initialize the array of threads
+                    public SumOfPrimes(int n) throws InterruptedException {
+                        this.myThreads = new MyThread[n];
+                        for (int i = 0; i < n; i++) {
+                            int start = ((limit * i) / n);
+                            int end = (i == n-1) ? limit : ((limit * (i+1))/n) - 1;
+                            myThreads[i] = new MyThread(start, end);
+                        }
+                    }
+                
+                    // Function to start all threads
+                    public void startAll() throws InterruptedException {
+                        for (int i = 0; i < myThreads.length; i++) {
+                            myThreads[i].start();
+                            myThreads[i].join();
+                        }
+                    }
+                
+                    public void getSum() {
+                        for (int i = 0; i < myThreads.length; i++) {
+                            this.sum += myThreads[i].getSum();
+                        }
+                    }
+                    
+                    public static void main(String[] args) {
+                        try {
+                            SumOfPrimes mt = new SumOfPrimes(threadCount);
+                            mt.startAll();
+                            mt.getSum();
+                            System.out.println("Sum of prime numbers is " + mt.sum);
+                        } catch (InterruptedException e) {
+                            System.err.print("Error: " + e);
+                        }
+                    }
+                }  
+            </code>
+        </pre>
+        <img src="7001Multithreading5.png" alt="output">
+        <br>
+        
+    </fieldset>
+    <br>
+    <a href="Page8.html" class="next-button">Inheritance</a>
+    <br>
+</body>
+</html>

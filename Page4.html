@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page4: AWT Programs </title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <fieldset>
+<h3>1. Creating a Window. </h3>
+<pre>
+    <code>
+        import java.awt.*;
+        import java.awt.event.*;
+        
+        class a
+        {
+            public static void main(String[] x) 
+            {
+                // Create a new frame.
+                Frame f = new Frame("AWT Button FlowLayout ");
+        
+                // Set the size of the frame.
+                f.setSize(300, 300);
+        
+                // Handle the window closing event.
+                f.addWindowListener(new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+        
+                // Create a button and add it to the frame.
+                Button b1= new Button("Click me!");
+                f.add(b1);
+        
+                // Create a label and add it to the frame.
+                Label l1 = new Label("You have not clicked the button yet.");
+                f.add(l1);
+        
+                // Set the layout manager for the frame to FlowLayout.
+                f.setLayout(new FlowLayout());
+        
+                // Display the frame.
+                f.setVisible(true);
+            }
+        }
+    </code>
+</pre>
+<img src="7039AWT1.png" alt =" output">
+<br>
+<h3>2. Create a Window with a Frame Layout .</h3>
+<pre>
+    <code>
+        import java.awt.*;
+        import java.awt.event.*;
+        
+        class a{
+            public static void main(String[] x) 
+            {
+                // Create a new frame.
+                Frame f = new Frame("AWT Button custom Layout ");
+        
+                // Set the size of the frame.
+                f.setSize(300, 300);
+        
+               
+                // Create a button and add it to the frame.
+                Button b1= new Button("Click me!");
+                
+                // Set the layout manager for the frame tocustom layout.
+                b1.setBounds(150,100,60,60);
+                f.add(b1);
+        
+                // Create a label and add it to the frame.
+                Label l1 = new Label("Please click the button.");
+                f.add(l1);
+        
+              
+                // Display the frame.
+                f.setVisible(true);
+                 // Handle the window closing event.
+                f.addWindowListener(new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+            }
+        } 
+    </code>
+</pre>
+<img src="7039AWT2.png" alt =" output">
+<br>
+<h3>3.  </h3>
+<pre>
+    <code>
+        import java.awt.BorderLayout;
+        import java.awt.Button;
+        import java.awt.Frame;
+        
+        class AWTButtonExample {
+            public static void main(String[] args) {
+                Frame frame = new Frame("AWT Button Example");
+        
+               
+                Button northButton = new Button("North");
+                Button eastButton = new Button("East");
+                Button westButton = new Button("West");
+                Button southButton = new Button("South");
+                Button centerButton = new Button("Center");
+        
+               
+                frame.add(northButton, BorderLayout.NORTH);
+                frame.add(eastButton, BorderLayout.EAST);
+                frame.add(westButton, BorderLayout.WEST);
+                frame.add(southButton, BorderLayout.SOUTH);
+                frame.add(centerButton, BorderLayout.CENTER);
+        
+                
+                frame.setSize(400, 300);
+                frame.setVisible(true);
+        
+               
+                frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                        System.exit(0);
+                    }
+                });
+            }
+        }
+        
+    </code>
+</pre>
+<img src="7029awt3.png" alt =" output">
+<br>
+<h3>4. create  a simple AWT application  that displays a TextField with FlowLayout manager. </h3>
+<pre>
+    <code>
+        //create  a simple AWT application  that displays a TextField with FlowLayout manager.
+        class awt{
+            public static void main(String[] gfdsafgvsds){
+                java.awt.Frame f = new java.awt.Frame();
+                java.awt.TextField t = new java.awt.TextField("Vipin");
+                f.setSize(100,200);
+                f.setVisible(true);
+                f.add(t);
+            }
+        }
+    </code>
+</pre>
+<img src="7077Awt4.png" alt =" output">
+<br>
+<h3>5. create  a simple AWT application  that displays a TextField with Custom manager. </h3>
+<pre>
+    <code>
+        //create  a simple AWT application  that displays a TextField with Custom manager.
+        class awt{
+            public static void main(String[] gfdsafgvsds){
+                java.awt.Frame f = new java.awt.Frame();
+                java.awt.TextField t = new java.awt.TextField("Vipin");
+                f.setLayout(null);
+                t.setBounds(30,100,150,30);
+                f.setSize(100,200);
+                f.setVisible(true);
+                f.add(t);
+            }
+        }
+    </code>
+</pre>
+<img src="7077Awt5.png" alt =" output">
+<br>
+<h3>6. Create a simple awt Application that displays a Checkbox with flowLayout Manager.. </h3>
+<pre>
+    <code>
+class awt{
+	public static void main(String[] gfdsafgvsds){
+        java.awt.Frame f = new java.awt.Frame();
+        java.awt.Checkbox t = new java.awt.Checkbox("Vipin");
+       
+		f.setSize(100,200);
+		f.setVisible(true);
+		f.add(t);
+	}
+}
+    </code>
+</pre>
+<img src="7077Awt6.png" alt =" output">
+<br>
+<h3>7.Create a simple awt Application that displays a Checkbox with Custom Manager. . </h3>
+<pre>
+    <code>
+        //Create a simple awt Application that displays a Checkbox with Custom Manager.
+class awt{
+	public static void main(String[] gfdsafgvsds){
+        java.awt.Frame f = new java.awt.Frame();
+        java.awt.Checkbox t = new java.awt.Checkbox("Vipin");
+       f.setLayout(null);
+       t.setBounds(30,100,150,30);
+		f.setSize(100,200);
+		f.setVisible(true);
+		f.add(t);
+	}
+}
+    </code>
+</pre>
+<img src="7077Awt7.png" alt =" output">
+<br>
+<h3>8.Create a simple awt Application that displays a Label with FlowLayout manager. . </h3>
+<pre>
+    <code>
+        //Create a simple awt Application that displays a Label with FlowLayout manager.
+class awt{
+	public static void main(String[] gfdsafgvsds){
+        java.awt.Frame f = new java.awt.Frame();
+        java.awt.Label t = new java.awt.Label("Vipin");
+		f.setSize(100,200);
+		f.setVisible(true);
+		f.add(t);
+	}
+}
+    </code>
+</pre>
+<img src="7077Awt8.png" alt =" output">
+<br>
+<h3>9. Create a simple awt Application that displays a Label with CustomLayout manager.. </h3>
+<pre>
+    <code>
+        //Create a simple awt Application that displays a Label with CustomLayout manager.
+class awt{
+	public static void main(String[] gfdsafgvsds){
+        java.awt.Frame f = new java.awt.Frame();
+        java.awt.Label t = new java.awt.Label("Vipin");
+       f.setLayout(null);
+       t.setBounds(334,100,150,30);
+		f.setSize(100,200);
+		f.setVisible(true);
+		f.add(t);
+	}
+}
+    </code>
+</pre>
+<img src="7077Awt9.png" alt =" output">
+<br>
+<h3>10. . </h3>
+<pre>
+    <code>
+    </code>
+</pre>
+<img src="" alt =" output">
+<br>
+<h3>11. . </h3>
+<pre>
+    <code>
+    </code>
+</pre>
+<img src="" alt =" output">
+<br>
+<h3>12. . </h3>
+<pre>
+    <code>
+        import java.awt.*;
+import java.awt.event.*;
+class awtpro1
+{
+    awtpro1()
+    {
+        Frame f= new Frame("checkbox Group");
+        Label l1= new Label("which is your favourite programming language?");
+        CheckboxGroup cg= new CheckboxGroup();
+        Checkbox c1= new Checkbox("HTML",cg, false);
+        Checkbox c2= new Checkbox("C",cg, false);
+        Checkbox c3= new Checkbox("C++",cg, false);
+        Checkbox c4= new Checkbox("JAVA",cg, false);
+        f.setSize(700,400);
+        f.setLayout( new FlowLayout());
+        f.setVisible(true);
+        f.add(l1);
+        f.add(c1);
+        f.add(c2);
+        f.add(c3);
+        f.add(c4);
+        f.addWindowListener (new WindowAdapter() {    
+            public void windowClosing (WindowEvent e) {    
+                System.exit(1);    
+            }    
+       });
+      }
+    public static void main(String st[])
+    {
+        new awtpro1();
+    }
+    
+}
+    </code>
+</pre>
+<img src="7062AWT12.png" alt =" output">
+<br>
+<h3>13. program 13 . </h3>
+<pre>
+    <code>
+import java.awt.*;
+import java.awt.event.*;
+ class CustomCheckboxLayoutExample extends Frame {
+    public CustomCheckboxLayoutExample() {
+        setTitle("CheckboxGroup with Custom Layout");
+        setSize(300, 200);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+        });
+
+        
+        CheckboxPanel checkboxPanel = new CheckboxPanel();
+
+       
+        CheckboxGroup checkboxGroup = new CheckboxGroup();
+
+        Checkbox checkbox1 = new Checkbox("Option 1", checkboxGroup, false);
+        Checkbox checkbox2 = new Checkbox("Option 2", checkboxGroup, false);
+        Checkbox checkbox3 = new Checkbox("Option 3", checkboxGroup, false);
+
+        checkboxPanel.addCheckbox(checkbox1);
+        checkboxPanel.addCheckbox(checkbox2);
+        checkboxPanel.addCheckbox(checkbox3);
+
+        
+        add(checkboxPanel);
+    }
+
+    public static void main(String[] args) {
+        CustomCheckboxLayoutExample example = new CustomCheckboxLayoutExample();
+        example.setVisible(true);
+    }
+}
+
+class CheckboxPanel extends Panel {
+    private int checkboxCount;
+    private int padding = 10;
+
+    public CheckboxPanel() {
+        setLayout(null); // Use a null layout for custom positioning
+    }
+
+    public void addCheckbox(Checkbox checkbox) {
+        checkboxCount++;
+        checkbox.setBounds(padding, checkboxCount * 30, 100, 20);
+        add(checkbox);
+    }
+}
+    </code>
+</pre>
+<img src="7085AWT13.png" alt =" output">
+<br>
+<h3>14.Create a simple AWT application that displays a List with FlowLayout manager. (Program 14) . </h3>
+<pre>
+    <code>
+// Note : In order to compile and run this program , rename it from "7070Awt14.java" to "Awt14.java"
+
+import java.awt.*;
+import java.awt.event.*;
+
+class Awt14 {
+    private Frame frame;
+    private List myList;
+
+    public Awt14() {
+        frame = new Frame("AWT List Example");
+        myList = new List();
+
+        // Add items to the List
+        myList.add("Item 1");
+        myList.add("Item 2");
+        myList.add("Item 3");
+        myList.add("Item 4");
+        myList.add("Item 5");
+
+        // Set FlowLayout for the frame
+        frame.setLayout(new FlowLayout());
+
+        // Add the List to the frame
+        frame.add(myList);
+
+        // Add a WindowListener to handle closing the frame
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+        // Set frame properties
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+    public static void main(String[] args) {
+        new Awt14();
+    }
+}
+    </code>
+</pre>
+<img src="7070Awt14.png" alt =" output">
+<br>
+<h3>16. . </h3>
+<pre>
+    <code>
+import java.awt.*;
+import java.awt.event.*;
+
+class textarea extends Frame {
+    private TextArea textArea;
+
+        textarea() {
+        setTitle("TextArea with FlowLayout");
+        setSize(400, 300);
+
+        setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10)); 
+
+        textArea = new TextArea(10, 30); 
+        add(textArea);
+
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+        });
+    }
+    public static void main(String[] args) {
+        textarea app = new textarea();
+        app.setVisible(true);
+    }
+}
+    </code>
+</pre>
+<img src="7003awt16.png" alt =" output">
+<br>
+    </fieldset>
+    <a href="Page5.html" class="next-button">2D Arrays</a>
+</body>
+</html>
