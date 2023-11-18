@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 9: Applet Programs</title>
+</head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<body>
+<fieldset>
+    <h2>Applet Programs.</h2>
+    <h3>1. Graphics g.</h3>
+    <pre>
+        <code>
+import java.applet.Applet;
+import java.awt.Graphics;
+public class pro1 extends Applet
+{
+    public void paint (Graphics g)
+    {
+        g.drawString ("Hello World", 20, 20);
+    }
+}
+        </code>
+    </pre>
+    <img src="j1.png" alt="">
+    <br>
+    <h3>2. .</h3>
+    <pre>
+        <code>
+            import java.applet.Applet;
+            import java.awt.*;
+            
+             //<applet code= pro2 width= 600 height=500 ></applet>
+            
+             public class pro2 extends Applet {
+               
+                public void paint(Graphics g){
+                    g.setColor(Color.red);
+                    g.drawString("hello world", 20, 20);
+                }
+                
+            }
+        </code>
+    </pre>
+    <img src="j2.png" alt="">
+    <br>
+    <h3>3. .</h3>
+    <pre>
+        <code>
+            import java.applet.*;
+            import java.awt.*;
+            
+            public class  pro3 extends Applet
+            {
+                int x=300,y=100,r=50;
+                public void paint(Graphics g)
+                {
+                    g.drawOval(x-r,y-r,100,100);
+                    g.drawString("Circle",275,100);
+               }
+            }
+            //<applet code= pro3 width= 600 height=500 ></applet>
+        </code>
+    </pre>
+    <img src="j3.png" alt="">
+    <br>
+    <h3>4. .</h3>
+    <pre>
+        <code>
+            import java.applet.Applet;
+            import java.awt.*;
+             public class pro4 extends Applet
+             {
+             
+            public void paint( Graphics g )
+            {
+            int x[] = { 20, 40, 50, 30, 20, 15 }; 
+            int y[] = { 50, 50, 60, 80, 80, 60 }; 
+            int num=5;
+            g.setColor(Color.blue); 
+            g.drawPolygon(x,y, num);
+             
+            }
+            }
+            //<applet code= pro4 width= 600 height=500 ></applet>
+        </code>
+    </pre>
+    <img src="j4.png" alt="">
+    <br>
+    <h3>5. .</h3>
+    <pre>
+        <code>
+            import java.applet.*;
+            import java.awt.*;
+            
+            public class pro5 extends Applet {
+                public void paint(Graphics g) {
+                    g.drawRect(50, 50, 200, 100);
+                }
+            }
+            /*<applet code="pro5" width="400" height="400"></applet> */
+        </code>
+    </pre>
+    <img src="j5.png" alt="output">
+    <br>
+    <h3>6. .</h3>
+    <pre>
+        <code>
+            import java.applet.*;
+            import java.awt.*;
+            
+            public class pro6 extends Applet {
+                public void paint(Graphics g) {
+                    g.drawRect(50, 50, 200, 200);
+                }
+            }
+            /*<applet code="pro6" width="400" height="400"></applet> */
+        </code>
+    </pre>
+    <img src="j6.png" alt="output">
+    <br>
+    <h3>7.Java Applet to Print Concentric Circles using Applet .</h3>
+    <pre>
+        <code>
+            /*Java Applet to Print Concentric Circles using Applet*/
+            import java.applet.*;
+            import java.awt.*;
+            public class pro7 extends Applet
+            {
+                //Initialize the applet
+                public void init()
+                {
+                setBackground(Color.yellow);
+                }
+                //Draw cocentric circle
+                public void paint(Graphics g)
+                {
+                g.setColor(Color.red);
+                int rad=25;
+                int dia=50;
+                for(int i=0;i<4;i++)
+                {
+                    g.drawOval(250-(i*rad),250-(i*rad),(i+1)*dia,(i+1)*dia);
+                }
+                }
+            }
+            /*
+            <applet code = pro7 width=500 height=500>
+            </applet>
+            */
+        </code>
+    </pre>
+    <img src="j7.png" alt="output">
+    <br>
+    <h3>8. .</h3>
+    <pre>
+        <code>
+            import java.applet.Applet;
+            import java.awt.Graphics;
+            public class pro8 extends Applet{
+             
+             public void paint(Graphics g){
+              
+            
+             //draw vertical line
+             g.drawLine(10,50,20,100);
+             
+             //draw horizontal line
+             g.drawLine(10,10,100,10);
+             }
+            }
+             //<applet code= pro8 width= 600 height=500 ></applet>
+        </code>
+    </pre>
+    <img src="j8.png" alt="">
+    <br>
+    <h3>9. .</h3>
+    <pre>
+        <code>
+            import java.awt.*;
+            import java.applet.Applet;
+             
+            public class pro9 extends Applet {
+             
+                public void paint(Graphics g)
+                {
+                   // draw a ellipse
+                    g.drawOval(100, 100, 150, 100);
+                }
+            }
+            /*<applet code="pro9" width="500" height="500"></applet> */
+        </code>
+    </pre>
+    <img src="j9.png" alt="">
+    <br>
+<h3>10. . </h3>
+<pre>
+    <code>
+import java.applet.Applet;
+import java.awt.*;
+
+
+public class pro10 extends Applet
+{
+    public void paint(Graphics g){
+        setForeground(Color.red);
+        g.drawArc(10,10,50,100,10,45);
+        g.fillArc(100,10,1000,100,0,90);
+
+    }
+}
+/*<applet code="pro10" width="400" height="400"></applet> */
+    </code>
+</pre>
+<img src="j10.png" alt =" output">
+<br>
+<h3>11. Background Color Changed. </h3>
+<pre>
+    <code>
+import java.applet.Applet;
+import java.awt.*;
+
+public class pro11 extends Applet {
+   
+    public pro11() {
+        setBackground(Color.red);
+    }
+
+    public void paint(java.awt.Graphics g) {
+
+        g.drawString("Background Color Changed", 50, 50);
+    }
+    /*
+     * <applet code="pro11.class" width="300" height="300">
+     * </applet>
+     */
+}
+    </code>
+</pre>
+<img src="j11.png" alt =" output">
+<br>
+<h3>12. .</h3>
+    <pre>
+        <code>
+            import java.awt.*;
+            import java.applet.Applet;
+             
+            public class pro12 extends Applet {
+             
+                public void paint(Graphics g)
+                {
+                      g.drawRoundRect(10,130,50,70,20,20);
+                      g.fillRoundRect(70,130,50,70,20,20);
+                }
+            }
+            /*<applet code="pro12" width="500" height="500"></applet> */
+        </code>
+    </pre>
+    <img src="j12.png" alt="output">
+    <br>
+<h3>13. .</h3>
+    <pre>
+        <code>
+            import java.awt.*;    
+            import java.applet.*;    
+                public class pro13 extends Applet    
+             {    
+               Font f1,f2,f3;    
+                
+               public void  init()    
+                {    
+                   f1 = new Font("Arial",Font.BOLD,18);    
+                   f2 = new Font("Forte",Font.PLAIN,24);    
+                   f3 = new Font("Elephant",Font.ITALIC,28);    
+                }    
+                      
+               public void  paint(Graphics g)    
+               {    
+                  g.drawString("Welcome",50,50);    
+                
+                  g.setFont(f1);     
+                  g.drawString("to ",50,80);    
+                
+                  g.setFont(f2);     
+                  g.drawString("My ",50,110);    
+                
+                  g.setFont(f3);     
+                  g.drawString("Website",50,140);    
+               }    
+             }    
+                
+            /* <applet code = "pro13" height = 500 width =500>  
+               </applet> */
+        </code>
+    </pre>
+    <img src="j13.png" alt="output">
+    <br>
+<h3>14. .</h3>
+    <pre>
+        <code>
+            import java.awt.*;
+            import java.applet.Applet;
+            import java.text.DateFormat;
+            import java.text.SimpleDateFormat;
+            import java.util.Date;
+            public class pro14 extends Applet {
+                DateFormat dateFormat;
+                Date date;
+                Thread t;
+                public void init() {
+                    this.setSize(300,200);
+                }
+                public void paint(Graphics g)
+                {
+                    try
+                    {
+                        Font f=new Font("Arial",Font.BOLD,50);
+                        g.setFont(f);
+                        g.setColor(Color.DARK_GRAY);
+                        dateFormat = new SimpleDateFormat("hh:mm:ss a");
+                        date = new Date();
+                        g.drawString(dateFormat.format(date),5,100);
+                        Font f1=new Font("Arial",Font.BOLD,10);
+                        g.setFont(f1);
+                        t.sleep(1000);
+                        repaint();
+                    }catch(Exception e)
+                    {
+                    }
+                }
+            }
+            /* <applet code = "pro14" height = 500 width =500>  
+               </applet> */
+        </code>
+    </pre>
+    <img src="j14.png" alt="Output">
+    <br>
+<h3>15. .</h3>
+<pre>
+    <code>
+import java.applet.Applet;
+import java.awt.*;
+
+   //<applet code= appro1 width= 600 height=500 ></applet>
+   
+public class appro1 extends Applet 
+{
+  public void paint(Graphics g) 
+   {
+      setBackground(Color.red);
+      g.setColor(Color.yellow);
+      g.fillOval(100, 100, 350, 350);
+      g.setColor(Color.black);
+      g.fillOval(195, 190, 40, 40);
+      g.fillOval(325, 190, 40, 40);
+      g.drawArc(200, 290, 150, 70, 180, 180);
+   }
+}
+    </code>
+</pre>
+<img src="j15.png" alt="output">
+<br>
+</fieldset>
+<a href="Page10.html" class="next-button">JDBC Programs </a>
+</body>
+</html>

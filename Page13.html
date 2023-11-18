@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 13 : Packages Program. </title>
+    <link rel="stylesheet" href="style.css" type="css/text" >
+
+</head>
+<body>
+    <fieldset>
+        <h3>1. </h3>
+        <pre>
+            <code>
+import java.util.Date;
+class A{
+    public static void main(String a[])
+    {
+        Date obj = new  Date();
+        System.out.println(obj); 
+    }
+}
+            </code>
+        </pre>
+        <img src="7023_Packages_1.png" alt="output">
+        <br>
+        <h3>2.Create a Java program to access the java.util.Date class through qualified way and print the current date of the system </h3>
+        <pre>
+            <code>
+                /* Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.*/
+
+                public class packages2_7024 {
+                    public static void main(String[] args) {
+                        java.util.Date currentDate = new java.util.Date();
+                        System.out.println("Current Date: " + currentDate);
+                    }
+                }
+            </code>
+        </pre>
+        <img src="packages2_7024.png" alt="OUTPUT">  
+        <h3>3.</h3>
+        <pre>
+            <code>
+                import java.util.Date;
+
+                public class CustomDate {
+                    private Date date;
+                
+                    public CustomDate() {
+                        date = new Date();
+                    }
+                
+                    public Date getCurrentDate() {
+                        return date;
+                    }
+                
+                    public static void main(String[] args) {
+                        CustomDate customDate = new CustomDate();
+                        Date currentDate = customDate.getCurrentDate();
+                
+                        System.out.println("Current Date: " + currentDate);
+                    }
+                }
+            </code>
+        </pre> 
+        <img src="7006package3.png" alt=""> 
+        <br>
+        <h3>4.Date </h3>
+        <pre>
+            <code>
+                class Date {
+                    public static void main(String args[]){
+                    java.util.Date date=new java.util.Date();  
+                    System.out.println(date); 
+                    }
+                }
+            </code>
+        </pre> 
+        <img src="7086Packages4.png" alt="output">
+        <br>
+    </fieldset>
+    <a href="Page14.html" class="next-button">Function Program </a>
+</body>
+</html>
