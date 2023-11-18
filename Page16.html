@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 16: Basic Construct Programs  </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Basic Construct Programs: </h2>
+    <fieldset>
+        <h3>5.</h3>
+        <pre>
+            <code>
+import java.util.Scanner;
+
+class average {
+    public static void main(String[] a) {
+        Scanner s=new Scanner(System.in);
+        double sum=0;
+        System.out.println("Enter Five Numbers: ");
+
+        for(int i=0;i<5;i++){
+            double number = s.nextDouble();
+            sum+=number;
+        }
+        double average=sum/5;
+        System.out.println("The average of the five numbers is : "+average);
+    }
+}
+            </code>
+        </pre>
+        <img src="7003BPC_5.png" alt="output">
+        <br>
+        <h3>7.</h3>
+        <pre>
+            <code>
+                import java.util.Scanner;
+                class decimaltobinary
+               {
+                  
+                   public static void main(String[] args) {
+                    
+                       int rem,num;
+                       String binaryNumber = "";
+                       
+                       Scanner input = new Scanner(System.in);
+                     
+                       System.out.print("Enter a Decimal Number : ");
+                      
+                       num = input.nextInt();
+                     
+                       while(num > 0){
+                       
+                         rem = num % 2;
+                         
+                         binaryNumber = rem + "" + binaryNumber;
+                         
+                         num =num / 2;
+                       }
+                       
+                       System.out.println("Binary Number : "+binaryNumber);
+                   }
+               }
+            </code>
+        </pre>
+        <img src="7020BPC_7.png" alt="output">
+        <br>
+        <h3>11.Comparetwonumbers</h3>
+        <pre>
+            <code>
+                import java.util.Scanner;
+
+
+                class Comparetwonumbers
+                {
+                    void CheckEqual(){
+                        int num1, num2;
+                        System.out.println("Program to compare two numbers");
+                        Scanner scan = new Scanner(System.in);
+                        System.out.print("Enter first number : ");
+                        num1 = scan.nextInt();
+                        System.out.print("Enter second number : ");
+                        num2 = scan.nextInt();
+                        if(num1 == num2){
+                            System.out.println("Both numbers are equal");
+                        }
+                        else{
+                            System.out.println("Numbers are not equal");
+                        }
+                    }
+                    public static void main(String args[]){
+                        Comparetwonumbers obj = new  Comparetwonumbers();
+                        obj.CheckEqual();
+                    }
+                }
+            </code>
+        </pre>
+        <img src="7020BPC_11.png" alt="output">
+        <br>
+        <h3>13.</h3>
+        <pre>
+            <code>
+                import java.util.Scanner;  
+                class AsciiValue  
+               {  
+               public static void main(String args[])  
+               {  
+               System.out.print("Enter a character: ");  
+               Scanner sc = new Scanner(System.in);  
+               char chr = sc.next().charAt(0);  
+               int asciiValue = chr;  
+               System.out.println("ASCII value of " +chr+ " is: "+asciiValue);  
+               }  
+               }  
+            </code>
+        </pre>
+        <img src="7020BPC_13.png" alt="output">
+        <br>
+        <h3>3.Write a Java program that takes two numbers and display the product of two numbers</h3>
+        <pre>
+            <code>
+                //Write a Java program that takes two numbers and display the product of two numbers
+                class ProductNums
+                {
+                    public static void main(String str[])throws java.io.IOException
+                    {	
+                        System.out.println("Computing the product of two number using BufferedReader Class");
+                
+                        java.io.InputStreamReader obj = new java.io.InputStreamReader(System.in);
+                        java.io.BufferedReader input = new java.io.BufferedReader(obj);
+                        System.out.println("enter a number : ");
+                        int a=Integer.parseInt(input.readLine());
+                        System.out.println("enter a number : ");
+                        int b=Integer.parseInt(input.readLine());
+                        System.out.println(a*b);
+                        
+                        
+                        System.out.println("Now we'll compute the product using Scanner Class");
+                
+                        java.util.Scanner input1 = new java.util.Scanner(System.in);
+                        System.out.println("enter a number : ");		
+                        int a1=input1.nextInt();
+                
+                        System.out.println("enter a number : ");
+                        int b1=input1.nextInt();
+                        System.out.println("Product of the two number is : "+ a1*b1);
+                    }
+                }
+            </code>
+        </pre>
+        <img src="7034bpc3.png" alt="">
+        <br>
+        <h3>22.</h3>
+        <pre>
+            <code>
+
+                class evenodd
+                {
+                public static void main(String a[])
+                {
+                int i,ecount=0,ocount=0;
+                int[] arr = {5, 7, 2, 4, 9};
+                for(i=0;i<5;i++)
+                {
+                    if(arr[i]%2==0)
+                    {
+                        ecount++;
+                    }
+                    else{
+                        ocount++;
+                    }
+                }
+                System.out.println("Given Array: ");
+                for(i=0;i<5;i++)
+                {
+                    System.out.println(arr[i]);
+                }
+                
+                System.out.println("No. of even numbers in array: "+ecount);
+                System.out.println("No. of odd number in  array: "+ocount);
+                }
+                }
+            </code>
+        </pre>
+        <img src="7062bpc22.png" alt="">
+        <br>
+        <h3>24.</h3>
+        <pre>
+            <code>
+                import java.io.*;
+                class palindrome
+                {
+                public static void main(String a[]) throws IOException
+                {
+                int num,temp,sum=0,r;
+                System.out.println("Enter any number:");
+                BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+                num = Integer.parseInt(br.readLine());
+                temp=num;
+                if(num>0)
+                {
+                while(num>0)
+                {    
+                r=num%10;  
+                sum=(sum*10)+r;    
+                num=num/10;    
+                }    
+                if(temp==sum)    
+                {
+                System.out.println(temp+" is palindrome number... ");    
+                }
+                else    
+                {  
+                System.out.println(temp+ " is not palindrome number...");    
+                }  
+                }
+                else
+                {
+                    System.out.println("Enter any positive number.");
+                }
+                    
+                }
+                }
+            </code>
+        </pre>
+        <img src="7062bpc24.png" alt="">
+        <br>
+        <h3>26.find the sum of all the digits in the number , </h3>
+        <pre>
+            <code>
+                class sum
+                {
+                    public static void main(String st[])
+                    {
+                        int num=12345,sum=0,temp;
+                        temp=num;
+                        while(num!=0)
+                            {
+                                sum=sum+num%10;
+                                num=num/10;
+                            }
+                            System.out.println("Sum of all digits  in the "+temp+" is "+sum);
+                    }
+                }
+            </code>
+        </pre>
+        <img src="7062bpc26.png" alt="">
+        <br>
+        <h3>30. Find Area of the triangle is </h3>
+        <pre>
+            <code>
+                import java.util.Scanner;
+                class area
+                {
+                    public static void main(String st[])
+                    {
+                      Scanner s=new Scanner(System.in);
+                      System.out.println("Enter the side of the triangle: ");
+                       double side =s.nextDouble();
+                        double ar= java.lang.Math.sqrt(3)/4*side*side;
+                        System.out.println("Area of the triangle is "+ ar);
+                    }
+                }
+            </code>
+        </pre>
+        <img src="7062bpc30.png" alt="">
+        <br>
+        <h3>93.SecondLargestNumber</h3>
+        <pre>
+            <code>
+
+                import java.util.Arrays;
+
+                class SecondLargestNumber
+                {
+                   public static void main(String args[])
+                   {
+                      System.out.println("\n Program to find second largest number from the array");
+                      int temp;
+                      int array[] = {10, 20, 25, 63, 96, 57};
+                
+                      for(int i = 0; i<array.length; i++ )
+                      {
+                         for(int j = i+1; j<array.length; j++)
+                         {
+                
+                            if(array[i]>array[j])
+                            {
+                               temp = array[i];
+                               array[i] = array[j];
+                               array[j] = temp;
+                            }
+                         }
+                      }
+                      System.out.println("\n Arrays : "+Arrays.toString(array));
+                      System.out.println(" Second largest number is : "+array[array.length-2]);
+                   }
+                }
+            </code>
+        </pre>
+        <img src="7072bpc93.png" alt="">
+        <br>
+    </fieldset>
+    <footer>
+        <p>SUBMITTED BY Tushar Thakur</p>
+        <p>BCA 5th semster</p>
+        <p>7075/21</p>
+        <p>SUBMITTED TO  Mr Chetan Gupta </p>
+        <p>  Java Programs </p>
+    </footer>
+</body>
+</html>
